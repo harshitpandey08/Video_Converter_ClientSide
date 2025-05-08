@@ -73,6 +73,22 @@ const VideoConverter = () => {
     setError(null);
   };
 
+  const handleFileRemove = () => {
+    setInputVideo(null);
+    setOutputVideo(null);
+    setProgress(0);
+    setError(null);
+    setVideoUrl('');
+    
+    // Revoke object URLs to free memory
+    if (videoUrl) {
+      URL.revokeObjectURL(videoUrl);
+    }
+    if (outputVideo) {
+      URL.revokeObjectURL(URL.createObjectURL(outputVideo));
+    }
+  };
+
   const convertVideo = async () => {
     if (!inputVideo || !isFFmpegLoaded) return;
 
@@ -188,6 +204,14 @@ const VideoConverter = () => {
                       onClick={downloadVideo}
                     >
                       Download Converted Video
+                    </button>
+                  )}
+                  {outputVideo && (
+                    <button
+                      className="btn-secondary"
+                      onClick={handleFileRemove}
+                    >
+                      Reset
                     </button>
                   )}
                 </div>
