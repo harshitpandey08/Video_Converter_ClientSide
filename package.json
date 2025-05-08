@@ -11,7 +11,7 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
-    "@ffmpeg/core": "0.11.0",
+    "@ffmpeg/core": "0.10.0",
     "@ffmpeg/ffmpeg": "^0.11.6",
     "classnames": "^2.3.2",
     "react": "^18.2.0",
