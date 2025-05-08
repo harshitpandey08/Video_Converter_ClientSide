@@ -6,7 +6,7 @@ import ProgressBar from './ProgressBar';
 // Create FFmpeg instance - we'll load it only once
 const ffmpeg = createFFmpeg({ 
   log: true,
-  corePath: 'https://unpkg.com/@ffmpeg/core@0.10.0/dist/ffmpeg-core.js'
+  corePath: 'https://unpkg.com/@ffmpeg/core@0.11.0/dist/ffmpeg-core.js'
 });
 
 const VideoConverter = () => {
